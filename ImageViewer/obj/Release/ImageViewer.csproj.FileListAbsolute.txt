@@ -1,0 +1,16 @@
+C:\Users\Michael Hall\Source\repos\ImageViewer\Release\ImageViewer.exe.config
+C:\Users\Michael Hall\Source\repos\ImageViewer\Release\ImageViewer.exe
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\MainWindow.baml
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\Resources\Icons.baml
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\Resources\Styles.baml
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\App.g.cs
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\MainWindow.g.cs
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer_MarkupCompile.cache
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer_MarkupCompile.lref
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\App.baml
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\Resources\Colors.baml
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer.g.resources
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer.Properties.Resources.resources
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer.csproj.GenerateResource.cache
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer.csproj.CoreCompileInputs.cache
+C:\Users\Michael Hall\Source\repos\ImageViewer\ImageViewer\obj\Release\ImageViewer.exe
