@@ -2,7 +2,6 @@
 
 View common images from your desktop quickly
 
-*View common images from your desktop quickly*
 
 ***Really fast and nice looking Image viewing app***
 
