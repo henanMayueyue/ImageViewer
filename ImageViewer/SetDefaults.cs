@@ -1,6 +1,5 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -25,7 +24,7 @@ namespace ImageViewer
 
             public static void SetAssociation()
             {
-                string[] extensions = { ".bmp", ".gif", ".jpeg", ".jpg", ".png" };
+                string[] extensions = { ".bmp", ".gif", ".jpeg", ".jpg", ".png", ".tiff" };
 
                 foreach (string ext in extensions)
                 {

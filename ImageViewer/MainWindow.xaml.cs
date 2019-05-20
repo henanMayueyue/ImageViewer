@@ -25,7 +25,7 @@ namespace ImageViewer
         bool mediaPaused = false;
         private Point origin;
         private Point start;
-        private string[] extensions = { ".bmp", ".gif", ".jpeg", ".jpg", ".png" };
+        private string[] extensions = { ".bmp", ".gif", ".jpeg", ".jpg", ".png", ".tiff" };
         public static string[] Args = Environment.GetCommandLineArgs();
         List<string> ImageList = null;
         public string CurrentImage = null;
@@ -232,6 +232,8 @@ namespace ImageViewer
             base.OnContentRendered(e);
 
             BlurBehind.EnableBlur(mainWindow);
+
+            element.RenderTransformOrigin = new Point(0.5, 0.5);
         }
 
         private void EventSubs(bool Startup)
@@ -417,32 +419,17 @@ namespace ImageViewer
         private void ZoomIn(bool isButton)
         {
             if (element.TransformToAncestor(border)
-             .TransformBounds(new Rect(element.RenderSize)).Width >= 20000) return;
+                  .TransformBounds(new Rect(element.RenderSize)).Width >= 20000) return;
 
             Matrix m = element.RenderTransform.Value;
-
-            double xCom = element.Width - element.MaxWidth;
-            double yCom = element.Height - element.MaxHeight;
-
-            if (xCom < 0)
-            {
-                xCom = 0;
-            }
-            if (yCom < 0)
-            {
-                yCom = 0;
-            }
-
-            double x = ((element.Width - xCom) / 2);
-            double y = ((element.Height - yCom) / 2);
-
+            
             if (isButton)
             {
-                m.ScaleAtPrepend(1.3, 1.3, x, y);
+                m.Scale(1.5, 1.5);
             }
             else
             {
-                m.ScaleAtPrepend(1.1, 1.1, x, y);
+                m.Scale(1.1, 1.1);
             }
 
             element.RenderTransform = new MatrixTransform(m);
@@ -451,32 +438,17 @@ namespace ImageViewer
         private void ZoomOut(bool isButton)
         {
             if (element.TransformToAncestor(border)
-        .TransformBounds(new Rect(element.RenderSize)).Width <= 200) return;
+          .TransformBounds(new Rect(element.RenderSize)).Width <= 200) return;
 
             Matrix m = element.RenderTransform.Value;
 
-            double xCom = element.Width - element.MaxWidth;
-            double yCom = element.Height - element.MaxHeight;
-
-            if (xCom < 0)
-            {
-                xCom = 0;
-            }
-            if (yCom < 0)
-            {
-                yCom = 0;
-            }
-
-            double x = ((element.Width - xCom) / 2);
-            double y = ((element.Height - yCom) / 2);
-
             if (isButton)
             {
-                m.ScaleAtPrepend(1 / 1.3, 1 / 1.3, x, y);
+                m.Scale(1 / 1.5, 1 / 1.5);
             }
             else
             {
-                m.ScaleAtPrepend(1 / 1.1, 1 / 1.1, x, y);
+                m.Scale(1 / 1.1, 1 / 1.1);
             }
 
             element.RenderTransform = new MatrixTransform(m);
@@ -500,8 +472,6 @@ namespace ImageViewer
 
         private void MainWindow_MouseWheel(object sender, MouseWheelEventArgs e)
         {
-            Point p = e.MouseDevice.GetPosition(element);
-
             Matrix m = element.RenderTransform.Value;
 
             if (e.Delta > 0)
@@ -509,14 +479,14 @@ namespace ImageViewer
                 if (element.TransformToAncestor(border)
                .TransformBounds(new Rect(element.RenderSize)).Width >= 20000) return;
 
-                m.ScaleAtPrepend(1.1, 1.1, p.X, p.Y);
+                m.Scale(1.1, 1.1);
             }
             else
             {
                 if (element.TransformToAncestor(border)
        .TransformBounds(new Rect(element.RenderSize)).Width <= 200) return;
-
-                m.ScaleAtPrepend(1 / 1.1, 1 / 1.1, p.X, p.Y);
+                
+                m.Scale(1 / 1.1, 1 / 1.1);
             }
 
             element.RenderTransform = new MatrixTransform(m);
