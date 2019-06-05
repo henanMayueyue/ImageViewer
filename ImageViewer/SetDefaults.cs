@@ -19,7 +19,14 @@ namespace ImageViewer
             {
                 RegistryKey root = Registry.ClassesRoot.OpenSubKey(@"\ImageViewer", false);
 
-                return root != null;
+                if (root == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
 
             public static void SetAssociation()
@@ -31,7 +38,7 @@ namespace ImageViewer
                     SetKeyValue(ext, "ImageViewer");
                 }
                 
-                SetKeyValue("ImageViewer", "ImageFileViewer");
+                SetKeyValue("ImageViewer", "ImageFile");
                 SetKeyValue(@"ImageViewer\DefaultIcon", "\"" + Application.ExecutablePath + "\"");
                 SetKeyValue(@"ImageViewer\shell\open\command", "\"" + Application.ExecutablePath + "\" \"%1\"");
 

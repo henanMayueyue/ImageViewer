@@ -14,6 +14,19 @@ namespace ImageViewer
         [STAThread]
         public static void Main()
         {
+            if (Environment.GetCommandLineArgs().Length == 1)
+            {
+                if (AdminCheck.IsAdministrator())
+                {
+                    SetDefaults.FileAssociations.SetAssociation();
+                }
+                else
+                {
+                    MessageBox.Show("It appears that you are running ImageViewer directly. Please run as administrator if you are trying to set defaults.", "ImageViewer", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    Environment.Exit(0);
+                }
+            }
             if (AdminCheck.IsAdministrator() && Default.SetDefaults)
             {
                 SetDefaults.FileAssociations.SetAssociation();
